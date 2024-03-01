@@ -1,0 +1,19 @@
+Package: cyclicvb
+Type: Package
+Title: This package provides a variational inference algorithm for cyclic structrual equation models
+Version: 0.1.0
+Authors@R: person(
+    "Zhuofan",
+    "Wang",
+    ,
+    "zf.wang@ruc.edu.cn", 
+    role = c("aut", "cre"))
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: This packages develops a variational inference procedure to estimate the inclusion 
+    probability of the adjacency matrix of a cyclic graph from the structural equation model.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Imports: Rcpp, RcppArmadillo, methods
+LinkingTo: Rcpp, RcppArmadillo
+RoxygenNote: 7.2.3

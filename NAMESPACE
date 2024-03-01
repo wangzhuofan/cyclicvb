@@ -1,0 +1,7 @@
+useDynLib(cyclicvb, .registration=TRUE)
+importFrom(Rcpp, evalCpp)
+exportPattern("^[[:alpha:]]+")
+export(cyclicvb)
+import(Rcpp,RcppArmadillo)
+importFrom("stats", "rnorm", "runif")
+importFrom("methods", "new")
