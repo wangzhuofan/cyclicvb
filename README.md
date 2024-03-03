@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of cyclicvb is to ...
+The goal of cyclicvb is to provide a variational inference algorithm for cyclic structrual equation models
 
 ## Installation
 
