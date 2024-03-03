@@ -1,7 +1,10 @@
-#include "cyclic_Variational.hpp"
+#include "cyclic_Variational.h"
 
 // [[Rcpp::depends(RcppArmadillo)]]
-
+//' @name CyclicVariationalCausalDiscovery
+//' @title CyclicVariationalCausalDiscovery
+//' @description This class provides a variational inference algorithm for cyclic structrual equation models
+//' @field new Constructor
 CyclicVariationalCausalDiscovery::CyclicVariationalCausalDiscovery(mat x_,string noise_type_){
   allParams.insert ( std::pair<string,double>("iterMax", 500) );
   allParams.insert ( std::pair<string,double>("sampleSize", 1000) );

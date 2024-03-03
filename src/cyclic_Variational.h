@@ -11,7 +11,10 @@ using namespace arma;
 using namespace std;
 
 
-
+//' @name CyclicVariationalCausalDiscovery
+//' @title CyclicVariationalCausalDiscovery
+//' @description This class provides a variational inference algorithm for cyclic structrual equation models
+//' @field new Constructor
 class CyclicVariationalCausalDiscovery{
 public:
 

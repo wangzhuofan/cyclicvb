@@ -1,4 +1,4 @@
-#include "cyclic_Variational.hpp"
+#include "cyclic_Variational.h"
 
 RCPP_MODULE(CYCLICVB){
 
