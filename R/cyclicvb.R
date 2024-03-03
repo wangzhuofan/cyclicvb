@@ -8,7 +8,7 @@ loadModule("CYCLICVB", TRUE)
 #' @return Inclusion probability of the adjacent matrix
 #' @export
 #'
-#' @examples \dontrun{cyclicvb(matrix(rt(500*10,3),500,10)))
+#' @examples \dontrun{cyclicvb(matrix(rt(500*10,3),500,10)))}
 cyclicvb = function(x,noisetype="laplace",seed=1){
   set.seed(seed)
   cycVB = new(CyclicVariationalCausalDiscovery,x,noisetype)
