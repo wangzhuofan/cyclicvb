@@ -49,11 +49,10 @@ void CyclicVariationalCausalDiscovery::update_grad(const mat & A,
   cube hardBinConcrete = clamp((c1-c0)*binConcrete+c0,0.0,1.0);
   cube MonteCarloSample = hardBinConcrete%sample_B;
   cube grad_core(p,p,sampleSize);
-  cube diff,Jacobian,scale_diff;
+  cube diff = eye<mat>(p,p)-MonteCarloSample.each_slice();
   mat noiseParamsMat = repmat(noiseParams, 1, n);
-  diff = eye<mat>(p,p)-MonteCarloSample.each_slice();
-  Jacobian = diff;
-  scale_diff = diff;
+  cube Jacobian = diff;
+  cube scale_diff = diff;
   Jacobian.each_slice([this](mat& slice) { slice = slice*inv(trans(slice)*slice+0.01 * eye<mat>(p,p)); });
   scale_diff.each_slice([noiseParams](mat& slice) { slice = slice.each_col()/noiseParams; });
   if (noiseType == "gaussian") {
@@ -207,8 +206,9 @@ void CyclicVariationalCausalDiscovery::init_run(){
   lowerbound_mu_s = allParams["lowerbound_mu_s"];
   lowerbound_noise = allParams["lowerbound_noise"];
 
-  u_randomSample = randu<cube>(p,p,sampleSize);
-  n_randomSample = randn<cube>(p,p,sampleSize);
+  
+  cube u_randomSample = randu<cube>(p,p,sampleSize);
+  cube n_randomSample = randn<cube>(p,p,sampleSize);
   trans_u = u_randomSample/(1-u_randomSample);
 
   mat tmp1 = mat(p, p, fill::ones);
