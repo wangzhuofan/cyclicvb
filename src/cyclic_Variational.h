@@ -74,6 +74,7 @@ private:
   double lowerbound_mu_s;
   double lowerbound_noise;
 
+  cube n_randomSample;
   cube trans_u;
 
   void update_grad(const mat & A, const mat & mu_u, const vec & mu_s, const mat & mu_v, const vec & noiseParams);

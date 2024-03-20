@@ -208,7 +208,7 @@ void CyclicVariationalCausalDiscovery::init_run(){
 
   
   cube u_randomSample = randu<cube>(p,p,sampleSize);
-  cube n_randomSample = randn<cube>(p,p,sampleSize);
+  n_randomSample = randn<cube>(p,p,sampleSize);
   trans_u = u_randomSample/(1-u_randomSample);
 
   mat tmp1 = mat(p, p, fill::ones);
